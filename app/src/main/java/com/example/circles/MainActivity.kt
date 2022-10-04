@@ -3,21 +3,29 @@ package com.example.circles
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.circles.ui.theme.CirclesTheme
+import androidx.compose.ui.Modifier
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.circles.ui.screens.LoginScreen
+import com.example.circles.ui.screens.RegisterScreen
+import com.example.circles.ui.screens.SplashScreen
+import com.example.circles.ui.theme.LoginScreenUITheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            CirclesTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
+            LoginScreenUITheme {
+                Surface(
+                    color = MaterialTheme.colors.background,
+                    modifier = Modifier.fillMaxSize()
+                ) {
+                    Navigation()
                 }
             }
         }
@@ -25,14 +33,17 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    CirclesTheme {
-        Greeting("Android")
+fun Navigation() {
+    val navController = rememberNavController()
+    NavHost(navController = navController, startDestination = "splash_screen") {
+        composable("splash_screen") {
+            SplashScreen(navController = navController)
+        }
+        composable("login_screen") {
+            LoginScreen(navController = navController)
+        }
+        composable("register_screen") {
+            RegisterScreen(navController = navController)
+        }
     }
 }
