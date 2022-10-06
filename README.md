@@ -22,6 +22,9 @@ If you’re working on an open issue, read the CONTRIBUTING.MD file in the repo 
 Ask to be assigned to that issue before you start working on it.
 
 ## Files and Assets
+
+Figma Link for UI reference : https://www.figma.com/file/TsYxWGDbwWpTnIhaIJCRpn/Circles?node-id=0%3A1
+
 All the assests required for creating the UI are available in the assets directory. Please strictly adhere to the designs provided.
 
 ## Join us on Discord!
