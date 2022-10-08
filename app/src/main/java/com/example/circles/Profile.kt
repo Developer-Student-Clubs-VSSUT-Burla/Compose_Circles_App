@@ -1,6 +1,5 @@
 package com.example.circles
 
-
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -18,9 +17,9 @@ import androidx.compose.material.icons.rounded.WbSunny
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.BlurredEdgeTreatment
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.blur
+import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.draw.BlurredEdgeTreatment
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Brush
@@ -33,8 +32,9 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.test.ui.theme.ExpandableCard
-import com.example.test.ui.theme.GlassmorphismOnComposeTheme
+import com.example.circles.ui.theme.GlassmorphismOnComposeTheme
+import com.example.circles.ui.*
+import com.example.circles.ui.theme.GlassmorphismOnComposeTheme
 
 class Profile : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,7 +66,7 @@ class Profile : ComponentActivity() {
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(Color(0xDD000000)),
+                    .background(Color(0xDDF5F1F1)),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.SpaceEvenly
             ) {
@@ -77,7 +77,7 @@ class Profile : ComponentActivity() {
                         .verticalScroll(scrollState),
                     verticalArrangement = Arrangement.SpaceEvenly,
                 ) {
-                    fullCard(icon = Icons.Rounded.WbSunny, 65, "San Francisco, California")
+                    fullCard()
                 }
 
             }
@@ -88,7 +88,7 @@ class Profile : ComponentActivity() {
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun fullCard(icon: ImageVector, temp: Int, place: String) {
+fun fullCard() {
 
     var expandedState by remember { mutableStateOf(false) }
     var size by remember {
@@ -117,7 +117,7 @@ fun fullCard(icon: ImageVector, temp: Int, place: String) {
         onClick = {
             expandedState = !expandedState
         },
-        backgroundColor = Color(0xFFFFFF),
+        backgroundColor = Color(0xFFDDD6D6),
         border = BorderStroke(1.dp, color = Color(0x25FFFFFF)),
         elevation = 0.dp,
         shape = RoundedCornerShape(16.dp)
@@ -176,7 +176,7 @@ fun fullCard(icon: ImageVector, temp: Int, place: String) {
             text = "Place  :  Bhubaneshwar , Odisha\n\nAge :  24\n\n" +
                     "Languages : ",
             style = MaterialTheme.typography.h5,
-            color = Color.White
+            color = Color.DarkGray
         )
 
 
@@ -193,7 +193,7 @@ fun fullCard(icon: ImageVector, temp: Int, place: String) {
             )
             Spacer(modifier = Modifier.width(10.dp))
             Image(
-                painterResource(R.drawable.kotlin),
+                painterResource(R.drawable),
                 contentDescription = "",
                 contentScale = ContentScale.FillBounds,
                 modifier = Modifier.height(27.dp).width(70.dp)
@@ -218,7 +218,7 @@ fun fullCard(icon: ImageVector, temp: Int, place: String) {
             .offset(15.dp,305.dp),
             text = "Frameworks : ",
             style = MaterialTheme.typography.h5,
-            color = Color.White
+            color = Color.DarkGray
         )
 
 
@@ -258,9 +258,43 @@ fun fullCard(icon: ImageVector, temp: Int, place: String) {
 
         Text(modifier = Modifier
             .offset(15.dp,390.dp),
-            text = "Rating : ",
+            text = "Hackathon Rating : ",
             style = MaterialTheme.typography.h5,
-            color = Color.White
+            color = Color.DarkGray
+        )
+        Row(
+            modifier = Modifier.offset(0.dp,430.dp)
+
+        ) {
+
+            Image(
+                painterResource(R.drawable.star),
+                contentDescription = "",
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.height(35.dp).width(65.dp)
+            )
+
+            Image(
+                painterResource(R.drawable.star),
+                contentDescription = "",
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.height(35.dp).width(65.dp)
+            )
+
+            Image(
+                painterResource(R.drawable.star),
+                contentDescription = "",
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.height(35.dp).width(65.dp)
+            )
+
+        }
+
+        Text(modifier = Modifier
+            .offset(15.dp,590.dp),
+            text = "CP Rating : ",
+            style = MaterialTheme.typography.h5,
+            color = Color.DarkGray
         )
         Row(
             modifier = Modifier.offset(0.dp,430.dp)
