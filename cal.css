@@ -1,0 +1,39 @@
+import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+.calculator {
+    padding: 10px;
+    border-radius: 1em;
+    height: 380px;
+    width: 400px;
+    margin: auto;
+    background-color: #f7ad71;
+    box-shadow: rgba(243, 167, 167, 0.425) 0px 10px 20px, rgba(247, 56, 56, 0.23) 0px 6px 6px;
+    background-image: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F8c%2F43%2F64%2F8c43645fe8d0ac164a6925448be32858.jpg&imgrefurl=https%3A%2F%2Fin.pinterest.com%2Fpin%2F402016704235354375%2F&tbnid=i2_9sc8AFLesaM&vet=12ahUKEwj__ZTF69n6AhWC-3MBHS1TCD8QMygAegUIARDjAQ..i&docid=Z1gCKcVrVR_0BM&w=590&h=590&q=background%20image%20for%20a%20calculator&ved=2ahUKEwj__ZTF69n6AhWC-3MBHS1TCD8QMygAegUIARDjAQ);
+}
+.display-box {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #dcdbe1;
+    border: solid black 0.5px;
+    color: black;
+    border-radius: 5px;
+    width: 100%;
+    height: 65%;
+}
+#btn {
+    background-color: #383f2e;
+}
+input[type=button] {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #ad5ae7;
+    color: white;
+    border: solid black 0.5px;
+    width: 100%;
+    border-radius: 5px;
+    height: 70%;
+    outline: none;
+}
+input:active[type=button] {
+    background: #e5e5e5;
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+    box-shadow: inset 0px 0px 5px #c1c1c1;
+}
