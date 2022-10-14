@@ -193,7 +193,7 @@ fun fullCard() {
             )
             Spacer(modifier = Modifier.width(10.dp))
             Image(
-                painterResource(R.drawable),
+                painterResource(R.drawable.kotlin),
                 contentDescription = "",
                 contentScale = ContentScale.FillBounds,
                 modifier = Modifier.height(27.dp).width(70.dp)
