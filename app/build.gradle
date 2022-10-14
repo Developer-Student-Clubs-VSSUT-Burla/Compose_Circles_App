@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.circles"
         minSdk 23
-        targetSdk 31
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -38,7 +38,7 @@ android {
     }
     composeOptions {
         kotlinCompilerExtensionVersion compose_version
-        kotlinCompilerVersion '1.5.21'
+        kotlinCompilerVersion '1.6.1'
     }
     packagingOptions {
         resources {
@@ -62,4 +62,14 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+}
+dependencies {
+
+    implementation 'androidx.navigation:navigation-runtime-ktx:2.4.2'
+    def nav_version = "2.5.2"
+
+    implementation("androidx.navigation:navigation-compose:$nav_version")
+    implementation "com.airbnb.android:lottie-compose:4.0.0"
+    //Icons
+    implementation "androidx.compose.material:material-icons-extended:$compose_version"
 }
