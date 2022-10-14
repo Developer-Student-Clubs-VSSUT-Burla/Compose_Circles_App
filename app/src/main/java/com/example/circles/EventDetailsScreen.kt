@@ -14,6 +14,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.circles.ui.common.CommonLoginButton
 
 @Composable
 fun EventDetailScreen(navController: NavController) {
@@ -157,7 +158,22 @@ fun EventDetailScreen(navController: NavController) {
                 }
 
 
+
             }
+            Row(
+                modifier=Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.Center
+
+            ){
+                CommonLoginButton(text = "Find Teammates", modifier = Modifier.padding(7.dp)) {
+
+
+                }
+                CommonLoginButton(text = "Register", modifier = Modifier.padding(7.dp)) {
+
+                }
+            }
+
 
 
         }

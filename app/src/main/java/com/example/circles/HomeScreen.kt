@@ -80,7 +80,7 @@ fun HomeScreen(navController: NavController) {
                     ),
             ) {
                 Text(
-                    text = "Hackthons", Modifier.padding(10.dp), color = Color.Blue
+                    text = "Hackthons", Modifier.padding(10.dp), color = Color(0xFF00316E)
                 )
             }
             Box(
@@ -93,7 +93,7 @@ fun HomeScreen(navController: NavController) {
                 ) {
                 Text(
                     text = "Open Source Contest",
-                    Modifier.padding(10.dp), color = Color.Blue
+                    Modifier.padding(10.dp), color = Color(0xFF00316E)
                 )
             }
             Box(
@@ -105,204 +105,109 @@ fun HomeScreen(navController: NavController) {
             ) {
                 Text(
                     text = "Compeititve Programming",
-                    Modifier.padding(10.dp), color = Color.Blue
+                    Modifier.padding(10.dp), color = Color(0xFF00316E)
                 )
             }
         }
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .fillMaxHeight(1.2f)
-                .horizontalScroll(rememberScrollState())
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
         ) {
-            Box(
-                modifier = Modifier.padding(10.dp)
-                    .fillMaxSize(1.8f)
-            ) {
-                Column {
+            Column {
+                Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ) {
                     Image(
                         painter = painterResource(id = R.drawable.rectangle),
                         contentDescription = "background",
-                        modifier = Modifier.fillMaxSize(1.5f),
-                        contentScale = ContentScale.Crop,
+                        modifier = Modifier.fillMaxSize(2f),
+                        contentScale = ContentScale.FillWidth,
                     )
-                    Box(
-                        modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center
-                    ) {
-                        Text(text = "Demo Hackathon")
-                    }
-                    CommonText(
-                        text = "Hackathon Details",
-                        color = Color.Blue,
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.W500
-                    ) {
-                        navController.navigate("event_detail_homescreen")
-                    }
-
-
                 }
-            }
-            Box(
-                modifier = Modifier.padding(10.dp)
-            ) {
-                Column {
-                    Image(
-                        painter = painterResource(id = R.drawable.rectangle),
-                        contentDescription = "background",
-                        modifier = Modifier.fillMaxSize(0.4f),
-                        contentScale = ContentScale.Crop,
-                    )
-                    Box(
-                        modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center
-                    ) {
-                        Text(text = "Demo Hackathon")
-
-                    }
-                    CommonText(
-                        text = "Hackathon Details",
-                        color = Color.Blue,
+                Box(
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text(
+                        text = "Demo Hackathon",
+                        color = Color(0xFF00316E),
                         fontSize = 18.sp,
                         fontWeight = FontWeight.W500
-                    ) {
-                        navController.navigate("event_detail_homescreen")
-                    }
-
-
+                    )
                 }
-
-            }
-            Box(
-                modifier = Modifier.padding(10.dp)
-            ) {
-                Column {
-                    Image(
-                        painter = painterResource(id = R.drawable.rectangle),
-                        contentDescription = "background",
-                        modifier = Modifier.fillMaxSize(0.4f),
-                        contentScale = ContentScale.Crop,
+                CommonText(
+                    text = "Hackathon Details Click Here... >",
+                    color = Color(0xFF00316E),
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.W500
+                ) {
+                    navController.navigate("event_detail_homescreen")
+                }
+                Box(
+                    modifier = Modifier
+                        .padding(7.dp)
+                        .background(color = Color(0xFF00316E))
+                ) {
+                    Text(
+                        "25th September 2022",
+                        color = Color.White,
+                        modifier = Modifier.padding(7.dp)
                     )
-                    Box(
-                        modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center
-                    ) {
-                        Text(text = "Demo Hackathon")
-
-                    }
-                    CommonText(
-                        text = "Hackathon Details",
-                        color = Color.Blue,
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.W500
-                    ) {
-                        navController.navigate("event_detail_homescreen")
-                    }
-
-
                 }
 
             }
         }
 
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .horizontalScroll(rememberScrollState())
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
         ) {
-            Box(
-                modifier = Modifier.padding(10.dp)
-            ) {
-                Column {
+            Column {
+                Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ) {
                     Image(
                         painter = painterResource(id = R.drawable.rectangle2),
                         contentDescription = "background",
-                        modifier = Modifier.fillMaxSize(0.4f),
-                        contentScale = ContentScale.Crop,
+                        modifier = Modifier.fillMaxSize(2f),
+                        contentScale = ContentScale.FillWidth,
                     )
-                    Box(
-                        modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center
-                    ) {
-                        Text(text = "Demo Hackathon")
-
-                    }
-                    CommonText(
-                        text = "Contest Details",
-                        color = Color.Blue,
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.W500
-                    ) {
-                        navController.navigate("event_detail_homescreen")
-                    }
-
-
-
                 }
-
-            }
-            Box(
-                modifier = Modifier.padding(10.dp)
-
-            ) {
-                Column {
-                    Image(
-                        painter = painterResource(id = R.drawable.rectangle2),
-                        contentDescription = "background",
-                        modifier = Modifier.fillMaxSize(0.4f),
-                        contentScale = ContentScale.Crop,
-                    )
-                    Box(
-                        modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center
-                    ) {
-                        Text(text = "Demo Hackathon")
-
-                    }
-                    CommonText(
-                        text = "Contest Details",
-                        color = Color.Blue,
+                Box(
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text(
+                        text = "June Long Challenge 2022",
+                        modifier = Modifier.padding(10.dp),
+                        color = Color(0xFF00316E),
                         fontSize = 18.sp,
                         fontWeight = FontWeight.W500
-                    ) {
-                        navController.navigate("event_detail_homescreen")
-                    }
-
-
+                    )
                 }
-
-            }
-            Box(
-                modifier = Modifier.padding(10.dp)
-
-            ) {
-                Column {
-                    Image(
-                        painter = painterResource(id = R.drawable.rectangle2),
-                        contentDescription = "background",
-                        modifier = Modifier.fillMaxSize(0.4f),
-
-                        contentScale = ContentScale.Crop,
+                CommonText(
+                    text = "Contest Details Click Here... >",
+                    color = Color(0xFF00316E),
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.W500
+                ) {
+                    navController.navigate("event_detail_homescreen")
+                }
+                Box(
+                    modifier = Modifier
+                        .padding(7.dp)
+                        .background(color = Color(0xFF00316E))
+                ) {
+                    Text(
+                        "25th September 2022",
+                        color = Color.White,
+                        modifier = Modifier.padding(7.dp)
                     )
-                    Box(
-                        modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center
-                    ) {
-                        Text(text = "Demo Hackathon")
-
-                    }
-                    CommonText(
-                        text = "Contest Details",
-                        color = Color.Blue,
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.W500
-                    ) {
-                        navController.navigate("event_detail_homescreen")
-                    }
-
-
                 }
 
             }
         }
-
 
     }
 }
-
 
