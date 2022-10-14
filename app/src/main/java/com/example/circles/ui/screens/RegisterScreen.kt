@@ -79,8 +79,6 @@ fun RegisterScreen(navController: NavController) {
                     println("Kayit Basarisiz")
                 }
             }
-            Spacer(modifier = Modifier.height(24.dp))
-            CommonGoogleButton(text = "Connect with Google")
             Spacer(modifier = Modifier.weight(0.3f))
             Row(
                 verticalAlignment = Alignment.CenterVertically,
@@ -91,7 +89,7 @@ fun RegisterScreen(navController: NavController) {
                 Spacer(modifier = Modifier.width(4.dp))
                 CommonText(
                     text = "Sign In",
-                    color = Color.Blue,
+                    color = Color(0xFF00316E),
                     fontSize = 18.sp,
                     fontWeight = FontWeight.W500
                 ) {

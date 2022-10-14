@@ -1,6 +1,7 @@
 package com.example.circles.ui.screens
 
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -8,11 +9,14 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.circles.R
 import com.example.circles.ui.common.CommonGoogleButton
 import com.example.circles.ui.common.CommonLoginButton
 import com.example.circles.ui.common.CommonText
@@ -47,7 +51,16 @@ fun LoginScreen(navController: NavController) {
                     color = LightGrayColor
                 ) {}
             }
-            Spacer(modifier = Modifier.height(60.dp))
+            Box(
+                contentAlignment = Alignment.Center
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.login),
+                    contentDescription = "background",
+                    modifier = Modifier.fillMaxSize(0.5f),
+                    contentScale = ContentScale.FillWidth,
+                )
+            }
             CommonTextField(
                 text = email,
                 placeholder = "Email",
@@ -61,16 +74,8 @@ fun LoginScreen(navController: NavController) {
                 onValueChange = { password = it },
                 isPasswordTextField = true
             )
-            Spacer(modifier = Modifier.height(8.dp))
-            Text(
-                text = "Forgot Password?",
-                fontWeight = FontWeight.Bold,
-                textAlign = TextAlign.End,
-                fontSize = 16.sp,
-                modifier = Modifier.fillMaxWidth()
-            )
-            Spacer(modifier = Modifier.weight(0.1f))
-            CommonLoginButton(text = "Login", modifier = Modifier.fillMaxWidth()) {
+
+            CommonLoginButton(text = "Login", modifier = Modifier.fillMaxWidth().padding(7.dp)) {
                 if (email == "adem" && password == "12345") {
                     println("Giris basarili.")
                 } else {
@@ -79,9 +84,6 @@ fun LoginScreen(navController: NavController) {
                 navController.navigate("home_screen")
 
             }
-            Spacer(modifier = Modifier.height(24.dp))
-            CommonGoogleButton(text = "Connect with Google")
-            Spacer(modifier = Modifier.weight(0.4f))
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.Center,
@@ -91,7 +93,7 @@ fun LoginScreen(navController: NavController) {
                 Spacer(modifier = Modifier.width(4.dp))
                 CommonText(
                     text = "Sign Up",
-                    color = Color.Blue,
+                    color = Color(0xFF00316E),
                     fontSize = 18.sp,
                     fontWeight = FontWeight.W500
                 ) {

@@ -53,7 +53,7 @@ fun CommonLoginButton(
             .background(
                 Brush.horizontalGradient(
                     colors = listOf(
-                        Color.Blue, Color.Blue
+                        Color(0xFF00316E), Color(0xFF00316E)
                     )
                 ),
                 RoundedCornerShape(20.dp)

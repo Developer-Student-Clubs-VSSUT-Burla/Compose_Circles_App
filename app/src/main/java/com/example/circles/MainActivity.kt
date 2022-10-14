@@ -48,5 +48,8 @@ fun Navigation() {
         composable("home_screen") {
             HomeScreen(navController = navController)
         }
+        composable("event_detail_homescreen") {
+            EventDetailScreen(navController = navController)
+        }
     }
 }
