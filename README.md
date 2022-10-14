@@ -1,9 +1,17 @@
 # Compose Circle App :
-GDSC-VSSUT X Hacktoberfest brings you an unprecedented opportunity to develop a **COMMUNITY APP** that will enable you to keep track of upcoming hackathons, competitive programming and open source contests.
+PROBLEM STATEMENT : 
 
-Let’s popularize open source with #Hacktoberfest a month-long carnival of open source projects,  their maintainers and the entire community of contributors. 
+When students are not part of an appropriate community that can inform you about different hackathons, coding contests, and open sources that allow them to innovate and strive to achieve new heights or help them expand their knowledge. They miss out on chances to realise your inner potential as a result.When students in a field are looking for appropriate teammates but are unable to get any help due to poor communication and lack of other students' enthusiasm, their ability to participate in a competition is limited by their contact radius.
 
-If you are a developer keen to find solutions for real-world problems then do come forward and be a part of the project.
+
+PROPOSED SOLUTION AND SCREENSHOT :
+ 
+The app's architecture consists of a home screen that requests the user's skill set and offers three options—hackathons, coding competitions, and open source—so that the user can select the platform on which he wishes to compete.
+
+ Additionally, it prompts users to select a skill set from the list of options. The app's ability to help the user identify suitable teammates is its most intriguing feature. Users don't need to freak out when looking for teammates about a person's domain. A list will be filtered out by the programme, which will then present it to the user for selection. 
+
+This app also gives users the opportunity to text with the students they want on their team and can get a chance to have proper conversation.
+
 
 ## 
 
