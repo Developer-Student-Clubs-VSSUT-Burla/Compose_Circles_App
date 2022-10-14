@@ -13,13 +13,7 @@ If you are a developer keen to find solutions for real-world problems then do co
 * Profile management
 * Event details and registrations
 * Support & Chat Box for connecting with people
-
-## What is Hacktoberfest?
-Hacktoberfest is an annual festival hosted by DigitalOcean that takes place in the month of October to celebrate the open source community. As part of this 31-day celebration, contributors and open source maintainers are encouraged to work on open source projects and win swag to mark the occasion.
-
-## Ready to make a contribution? 
-If you’re working on an open issue, read the CONTRIBUTING.MD file in the repo to get specific guidelines on how to work on this repo.
-Ask to be assigned to that issue before you start working on it.
+![image](https://user-images.githubusercontent.com/78889786/195868860-3ae8b6f4-ee82-4d69-9e38-9ce25f8554d4.png)
 
 ## Files and Assets
 

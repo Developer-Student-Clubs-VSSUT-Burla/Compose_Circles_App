@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Circles</string>
+    <string name="name">Name</string>
+    <string name="personality">Personality</string>
+    <string name="chat">Chat</string>
+    <string name="sex">Tech-Stacks</string>
+    <string name="age">Age</string>
 </resources>
