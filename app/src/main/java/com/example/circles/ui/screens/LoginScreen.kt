@@ -1,8 +1,10 @@
 package com.example.circles.ui.screens
 
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
@@ -12,6 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -23,11 +26,14 @@ import com.example.circles.ui.common.CommonText
 import com.example.circles.ui.common.CommonTextField
 import com.example.circles.ui.theme.LightGrayColor
 import com.example.circles.ui.theme.PinkColor
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 @Composable
 fun LoginScreen(navController: NavController) {
-    var email by remember { mutableStateOf("") }
-    var password by remember { mutableStateOf("") }
+    val auth = Firebase.auth
+    var emailValue = remember { mutableStateOf(TextFieldValue()) }
+    var passwordValue = remember { mutableStateOf(TextFieldValue()) }
     Surface(
         modifier = Modifier
             .fillMaxSize()
@@ -61,29 +67,46 @@ fun LoginScreen(navController: NavController) {
                     contentScale = ContentScale.FillWidth,
                 )
             }
-            CommonTextField(
-                text = email,
-                placeholder = "Email",
-                onValueChange = { email = it },
-                isPasswordTextField = false
-            )
-            Spacer(modifier = Modifier.height(16.dp))
-            CommonTextField(
-                text = password,
-                placeholder = "Password",
-                onValueChange = { password = it },
-                isPasswordTextField = true
-            )
+            OutlinedTextField(
+                label = {
+                    Text("Email")
+                },
 
-            CommonLoginButton(text = "Login", modifier = Modifier.fillMaxWidth().padding(7.dp)) {
-                if (email == "adem" && password == "12345") {
-                    println("Giris basarili.")
-                } else {
-                    println("Giris basarisiz.")
-                }
-                navController.navigate("home_screen")
+                value = emailValue.value,
+                singleLine = true,
+                modifier=Modifier.fillMaxWidth(),
+                onValueChange = {
+                    emailValue.value = it
+                })
+            OutlinedTextField(
+                label = {
+                    Text("Password")
+                },
+                value = passwordValue.value,
+                singleLine = true,
+                modifier=Modifier.fillMaxWidth(),
+                onValueChange = {
+                    passwordValue.value = it
+                })
+            CommonLoginButton(text = "Login", modifier = Modifier
+                .fillMaxWidth()
+                .padding(10.dp),
 
-            }
+                onClick = {
+                    auth.signInWithEmailAndPassword(
+                        emailValue.value.text.trim(),
+                        passwordValue.value.text.trim(),
+                    ).addOnCompleteListener{task->
+                        if(task.isSuccessful){
+                            navController.navigate("home_screen")
+                        }
+                        else{
+                            Log.d("TAG","Error Occured")
+                        }
+
+                    }
+
+                })
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.Center,

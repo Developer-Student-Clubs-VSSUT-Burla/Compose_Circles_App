@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -45,6 +46,8 @@ android {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
+    compileSdkVersion 33
+    buildToolsVersion '31.0.0'
 }
 
 dependencies {
@@ -59,13 +62,18 @@ dependencies {
     implementation 'androidx.activity:activity-compose:1.5.1'
     testImplementation 'junit:junit:4.+'
     implementation "androidx.compose.ui:ui-util:$compose_version"
+    implementation platform('com.google.firebase:firebase-bom:31.0.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+    implementation 'com.google.firebase:firebase-auth-ktx'
 }
 dependencies {
 
+
+    implementation 'com.google.firebase:firebase-auth:21.1.0'
     implementation 'androidx.navigation:navigation-runtime-ktx:2.4.2'
     def nav_version = "2.5.2"
 

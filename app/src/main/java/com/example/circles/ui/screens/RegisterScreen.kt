@@ -1,27 +1,40 @@
 package com.example.circles.ui.screens
 
+import android.util.Log
+import android.widget.Toast
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Surface
+import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.circles.MainActivity
+import com.example.circles.R
 import com.example.circles.ui.common.CommonGoogleButton
 import com.example.circles.ui.common.CommonLoginButton
 import com.example.circles.ui.common.CommonText
 import com.example.circles.ui.common.CommonTextField
 import com.example.circles.ui.theme.LightGrayColor
 import com.example.circles.ui.theme.PinkColor
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 @Composable
 fun RegisterScreen(navController: NavController) {
-    var fullName by remember { mutableStateOf("") }
-    var email by remember { mutableStateOf("") }
-    var password by remember { mutableStateOf("") }
+    val auth = Firebase.auth
+    var fullName = remember { mutableStateOf(TextFieldValue()) }
+    var emailValue = remember { mutableStateOf(TextFieldValue()) }
+    var passwordValue = remember { mutableStateOf(TextFieldValue()) }
     Surface(
         modifier = Modifier
             .fillMaxSize()
@@ -49,36 +62,54 @@ fun RegisterScreen(navController: NavController) {
                     color = LightGrayColor
                 ) {}
             }
-            Spacer(modifier = Modifier.height(60.dp))
-            CommonTextField(
-                text = fullName,
-                placeholder = "Full Name",
-                onValueChange = { fullName = it },
-                isPasswordTextField = false
-            )
-            Spacer(modifier = Modifier.height(16.dp))
-            CommonTextField(
-                text = email,
-                placeholder = "Email",
-                onValueChange = { email = it },
-                isPasswordTextField = false
-            )
-            Spacer(modifier = Modifier.height(16.dp))
-            CommonTextField(
-                text = password,
-                placeholder = "Password",
-                onValueChange = { password = it },
-                isPasswordTextField = true
-            )
-            Spacer(modifier = Modifier.weight(0.2f))
-            CommonLoginButton(text = "Register", modifier = Modifier.fillMaxWidth()) {
-                if (email.isNotBlank() && password.isNotBlank() && fullName.isNotBlank()) {
-                    println("Kayit Basarili")
-                    navController.navigate("login_screen")
-                } else {
-                    println("Kayit Basarisiz")
-                }
+            Box(
+                contentAlignment = Alignment.Center
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.register),
+                    contentDescription = "background",
+                    modifier = Modifier.fillMaxSize(0.5f),
+                    contentScale = ContentScale.FillWidth,
+                )
             }
+            OutlinedTextField(
+                label = {
+                    Text("Email")
+                },
+
+                value = emailValue.value,
+                singleLine = true,
+                modifier=Modifier.fillMaxWidth(),
+                onValueChange = {
+                    emailValue.value = it
+                })
+            OutlinedTextField(
+                label = {
+                    Text("Password")
+                },
+                value = passwordValue.value,
+                singleLine = true,
+                modifier=Modifier.fillMaxWidth(),
+                onValueChange = {
+                    passwordValue.value = it
+                })
+            Spacer(modifier = Modifier.weight(0.2f))
+            CommonLoginButton(text = "Register", modifier = Modifier.fillMaxWidth(),
+                onClick = {
+                    auth.createUserWithEmailAndPassword(
+                        emailValue.value.text.trim(),
+                        passwordValue.value.text.trim(),
+                    ).addOnCompleteListener{task->
+                        if(task.isSuccessful){
+                            navController.navigate("login_screen")
+                        }
+                        else{
+                            Log.d("TAG","Error Occured")
+                        }
+
+                    }
+
+                })
             Spacer(modifier = Modifier.weight(0.3f))
             Row(
                 verticalAlignment = Alignment.CenterVertically,
@@ -93,7 +124,7 @@ fun RegisterScreen(navController: NavController) {
                     fontSize = 18.sp,
                     fontWeight = FontWeight.W500
                 ) {
-                    navController.navigate("login_screen"){
+                    navController.navigate("login_screen") {
                         popUpTo("login_screen") { inclusive = true }
                     }
                 }
