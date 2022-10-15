@@ -14,6 +14,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.circles.ui.screens.LoginScreen
 import com.example.circles.ui.screens.RegisterScreen
 import com.example.circles.ui.screens.SplashScreen
+import com.example.circles.ui.screens.TeamMembers
 import com.example.circles.ui.theme.LoginScreenUITheme
 
 class MainActivity : ComponentActivity() {
@@ -50,6 +51,9 @@ fun Navigation() {
         }
         composable("event_detail_homescreen") {
             EventDetailScreen(navController = navController)
+        }
+        composable("team_members_screen") {
+            TeamMembers(navController = navController)
         }
     }
 }

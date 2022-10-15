@@ -1,5 +1,6 @@
 package com.example.circles
 
+import android.content.Intent
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Surface
@@ -9,15 +10,18 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.content.ContextCompat.startActivity
 import androidx.navigation.NavController
 import com.example.circles.ui.common.CommonLoginButton
 
 @Composable
 fun EventDetailScreen(navController: NavController) {
+    val mContext = LocalContext.current
     Surface() {
         Column(
             modifier = Modifier
@@ -166,10 +170,12 @@ fun EventDetailScreen(navController: NavController) {
 
             ){
                 CommonLoginButton(text = "Find Teammates", modifier = Modifier.padding(7.dp)) {
-
+                    navController.navigate("team_members_screen")
 
                 }
-                CommonLoginButton(text = "Register", modifier = Modifier.padding(7.dp)) {
+
+                CommonLoginButton(text = "Register", modifier = Modifier.padding(7.dp),
+                    ){
 
                 }
             }
