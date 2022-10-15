@@ -23,7 +23,7 @@ This app also gives users the opportunity to text with the students they want on
 * Event details and registrations
 * Support & Chat Box for connecting with people
 
-![image](https://user-images.githubusercontent.com/78889786/195868860-3ae8b6f4-ee82-4d69-9e38-9ce25f8554d4.png)
+<img width="900" alt="Circles_UI" src="https://user-images.githubusercontent.com/78612493/195996229-4719aa97-25e2-422c-afab-d1ab2933ee5a.png">
 
 ## FUNCTIONALITY & CONCEPTS USED
 
