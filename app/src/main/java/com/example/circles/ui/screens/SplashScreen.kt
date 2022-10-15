@@ -40,7 +40,8 @@ fun SplashScreen(navController: NavController) {
                 Box(
                     Modifier
                         .fillMaxSize()
-                        .gradientBackground(listOf(Color((0xFF00316E)), Color.Black), angle = 90f))
+                        .gradientBackground(listOf(Color((0xFF00316E)), Color.Black), angle = 90f)){}
+
 
             }
         }
