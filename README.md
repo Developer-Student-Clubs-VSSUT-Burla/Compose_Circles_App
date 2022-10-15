@@ -25,7 +25,7 @@ This app also gives users the opportunity to text with the students they want on
 
 ![image](https://user-images.githubusercontent.com/78889786/195868860-3ae8b6f4-ee82-4d69-9e38-9ce25f8554d4.png)
 
-##FUNCTIONALITY & CONCEPTS USED
+## FUNCTIONALITY & CONCEPTS USED
 
 FIREBASE AUTHENTICATION: The login and signup functionality of the app is implemented using the firebase authentication. Each valid user is allowed to create an account with the help of the email and password and can log back in with the same credentials.
 
