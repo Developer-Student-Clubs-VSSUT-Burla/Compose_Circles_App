@@ -1,10 +1,11 @@
 # Compose Circle App :
-PROBLEM STATEMENT : 
+**PROBLEM STATEMENT :**
 
-When students are not part of an appropriate community that can inform you about different hackathons, coding contests, and open sources that allow them to innovate and strive to achieve new heights or help them expand their knowledge. They miss out on chances to realise your inner potential as a result.When students in a field are looking for appropriate teammates but are unable to get any help due to poor communication and lack of other students' enthusiasm, their ability to participate in a competition is limited by their contact radius.
+Over 80% of Fortune 100 companies conduct hackathons to drive innovation. More than 50% of the hackathons are recurring events, indicating that they are a reliable tool for sustained innovation. According to the present competitive landscape, over a thousand hackathons ,competitive programming, and open source competitions are held internationally each year. 
+However, it is quite difficult for students to be constantly aware of such events and to be properly prepared. Students who are not part of an appropriate community that can inform them about different contests, they miss out on chances to realise their inner potential. When students in a field are looking for appropriate teammates but are unable to get any help due to poor communication and lack of other students' enthusiasm, their ability to participate in a competition is limited by their contact radius.
 
 
-PROPOSED SOLUTION AND SCREENSHOT :
+**PROPOSED SOLUTION AND SCREENSHOT :**
  
 The app's architecture consists of a home screen that requests the user's skill set and offers three options—hackathons, coding competitions, and open source—so that the user can select the platform on which he wishes to compete.
 
@@ -16,11 +17,12 @@ This app also gives users the opportunity to text with the students they want on
 ## 
 
 ## Features
-* Find Hackathons, competative programming contests and Open-Source contests
-* Find teammates based on their skills
+* Find Hackathons, competitive programming contests and Open-Source contests
+* Find teammates based on their skills and tech stack
 * Profile management
 * Event details and registrations
 * Support & Chat Box for connecting with people
+
 ![image](https://user-images.githubusercontent.com/78889786/195868860-3ae8b6f4-ee82-4d69-9e38-9ce25f8554d4.png)
 
 ## Files and Assets
