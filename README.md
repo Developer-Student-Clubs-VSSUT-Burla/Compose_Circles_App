@@ -38,9 +38,9 @@ LOTTIE ANIMATION LIBRARY: We implemented Lottie library in order to incorporate 
 The app is yet to be developed in order to be used in a wider spectrum.
 <br>
 We want to improve our app even further by introducing sophisticated features like a Mentor-Mentee area to help students prepare for contests, making it more versatile.<br>
-We also plan to integrate the expected dates for hackathons and contests with Google Calendar to updated with dates.<br>
+We also plan to integrate the expected dates for hackathons and contests with Google Calendar to updated with dates.
 Furthermore, we would include a feature for the resources stores, whether hardware or software, that would be necessary for the hackathons.<br>
-This application will undoubtedly assist college students who wish to engage in hackathons and be prepared to innovate.<br>
+This application will undoubtedly assist students who wish to engage in hackathons and be prepared to innovate.<br>
 
 ## FILES AND ASSETS
 
