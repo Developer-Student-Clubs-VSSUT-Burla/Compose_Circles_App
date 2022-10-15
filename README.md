@@ -25,6 +25,15 @@ This app also gives users the opportunity to text with the students they want on
 
 ![image](https://user-images.githubusercontent.com/78889786/195868860-3ae8b6f4-ee82-4d69-9e38-9ce25f8554d4.png)
 
+##FUNCTIONALITY & CONCEPTS USED
+
+FIREBASE AUTHENTICATION: The login and signup functionality of the app is implemented using the firebase authentication. Each valid user is allowed to create an account with the help of the email and password and can log back in with the same credentials.
+
+NAVIGATION LIBRARY:  In the app in order to switch between different screens and components a navigation library is used.
+
+LOTTIE ANIMATION LIBRARY: We implemented Lottie library in order to incorporate animations in our app. This overall improved the user-experience of our app and gave a new look to the user interface.
+
+
 ## APPLICATION AND FUTURE SCOPE
 The app is yet to be developed in order to be used in a wider spectrum.
 <br>
