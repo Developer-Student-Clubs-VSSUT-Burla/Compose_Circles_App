@@ -42,7 +42,7 @@ We also plan to integrate the expected dates for hackathons and contests with Go
 Furthermore, we would include a feature for the resources stores, whether hardware or software, that would be necessary for the hackathons.<br>
 This application will undoubtedly assist students who wish to engage in hackathons and be prepared to innovate.<br>
 
-## FILES AND ASSETS
+## FILES AND ASSETS.
 
 Figma Link for UI reference : https://www.figma.com/file/TsYxWGDbwWpTnIhaIJCRpn/Circles?node-id=0%3A1
 
